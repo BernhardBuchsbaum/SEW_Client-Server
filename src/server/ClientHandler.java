@@ -15,9 +15,11 @@ public class ClientHandler {
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
             System.out.println("Server: Empfange Daten.");
+            System.out.println("Sever: Clientnachricht: " + in.readLine());
 
-
-            System.out.println("Server: Sende Daten.");
+            System.out.println("Server: Sende Daten an Client.");
+            out.println("Liebe Grüße vom Server!");
+            out.flush();
         }
         catch (IOException e){
             System.out.println("Server: Lesen/Schreiben hat nicht funktioniert");
